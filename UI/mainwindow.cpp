@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "broadcast.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -24,6 +25,10 @@ void MainWindow::on_m_connect_qp_clicked()
 
     if (tcpSocket.waitForConnected()) {
         QMessageBox::information(this, "Success", "Connection to the server has been successful.");
+        Broadcast *window = new Broadcast;
+        window->show();
+        close();
+
     } else {
         QMessageBox::critical(
             this, "Error", "Failed to connect to the server. Please check the IP address and port.");
