@@ -60,7 +60,7 @@ border-radius: 20px</string>
      <rect>
       <x>282</x>
       <y>10</y>
-      <width>231</width>
+      <width>241</width>
       <height>101</height>
      </rect>
     </property>
@@ -80,7 +80,7 @@ border-radius: 20px</string>
       <x>80</x>
       <y>60</y>
       <width>611</width>
-      <height>601</height>
+      <height>614</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -135,7 +135,7 @@ border-radius: 20px</string>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QLineEdit" name="m_ip_le">
+            <widget class="QLineEdit" name="m_y6">
              <property name="styleSheet">
               <string notr="true">background-color: rgba(0, 0, 0, 0);
 border: none;
@@ -149,7 +149,7 @@ padding-bottom: 7px;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="m_ip_le_2">
+            <widget class="QLineEdit" name="m_x6">
              <property name="styleSheet">
               <string notr="true">background-color: rgba(0, 0, 0, 0);
 border: none;
@@ -167,7 +167,7 @@ padding-bottom: 7px;</string>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QLineEdit" name="m_ip_le_3">
+            <widget class="QLineEdit" name="m_s2">
              <property name="styleSheet">
               <string notr="true">background-color: rgba(0, 0, 0, 0);
 border: none;
@@ -184,7 +184,7 @@ padding-bottom: 7px;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="m_ip_le_4">
+            <widget class="QLineEdit" name="m_m2">
              <property name="styleSheet">
               <string notr="true">background-color: rgba(0, 0, 0, 0);
 border: none;
@@ -198,7 +198,7 @@ padding-bottom: 7px;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="m_ip_le_5">
+            <widget class="QLineEdit" name="m_v8">
              <property name="styleSheet">
               <string notr="true">background-color: rgba(0, 0, 0, 0);
 border: none;
@@ -216,7 +216,7 @@ padding-bottom: 7px;</string>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QLineEdit" name="m_ip_le_6">
+            <widget class="QLineEdit" name="m_p8">
              <property name="styleSheet">
               <string notr="true">background-color: rgba(0, 0, 0, 0);
 border: none;
@@ -230,7 +230,7 @@ padding-bottom: 7px;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="m_ip_le_7">
+            <widget class="QLineEdit" name="m_a8">
              <property name="styleSheet">
               <string notr="true">background-color: rgba(0, 0, 0, 0);
 border: none;
@@ -246,18 +246,36 @@ padding-bottom: 7px;</string>
           </layout>
          </item>
          <item>
-          <widget class="QLineEdit" name="m_ip_le_8">
-           <property name="styleSheet">
-            <string notr="true">background-color: rgba(0, 0, 0, 0);
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLineEdit" name="m_r16">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgba(0, 0, 0, 0);
 border: none;
 border-bottom: 2px solid rgba(105, 118, 132, 255);
 color:rgba(255, 255, 255, 230);
 padding-bottom: 7px;</string>
-           </property>
-           <property name="placeholderText">
-            <string>R-16</string>
-           </property>
-          </widget>
+             </property>
+             <property name="placeholderText">
+              <string>R-16</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="m_r_count">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgba(0, 0, 0, 0);
+border: none;
+border-bottom: 2px solid rgba(105, 118, 132, 255);
+color:rgba(255, 255, 255, 230);
+padding-bottom: 7px;</string>
+             </property>
+             <property name="placeholderText">
+              <string>Bits amount</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
@@ -285,7 +303,7 @@ padding-bottom: 7px;</string>
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="m_send">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -301,7 +319,7 @@ padding-bottom: 7px;</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="m_assistance">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -314,7 +332,7 @@ padding-bottom: 7px;</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="m_quit">
          <property name="minimumSize">
           <size>
            <width>0</width>
