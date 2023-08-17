@@ -2,12 +2,17 @@ TEMPLATE = app
 TARGET = Broadcast-words
 CONFIG += c++17
 QT += widgets
+QT += core gui network
 
-SOURCES += main.cpp \
-    mainwindow.cpp
+
+SOURCES += UI/main.cpp \
+    UI/mainwindow.cpp
 
 FORMS += \
-    mainwindow.ui
+    UI/mainwindow.ui
 
 HEADERS += \
-    mainwindow.h
+    UI/mainwindow.h
+
+RESOURCES += \
+    Resources/qrc.qrc

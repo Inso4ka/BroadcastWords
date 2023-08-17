@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QTcpSocket>
 
 namespace Ui {
 class MainWindow;
@@ -14,6 +16,11 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+private slots:
+    void on_m_connect_qp_clicked();
+
+    void on_m_joke_qp_clicked();
 
 private:
     Ui::MainWindow *ui;
