@@ -22,18 +22,29 @@ void MainWindow::on_m_connect_qp_clicked()
     QString serverPort = ui->m_port_le->text();
     int port = serverPort.toInt();
 
-    QUdpSocket udpSocket;
-    udpSocket.connectToHost(serverIP, port);
+    QHostAddress address(serverIP);
+    bool isIPValid = address.toIPv4Address() != 0; // Проверяем правильность IP-адреса
+    bool isPortValid = port > 0 && port <= 65535; // Проверяем правильность порта
 
-    if (udpSocket.waitForConnected()) {
-        QMessageBox::information(this, "Success", "Connection to the server has been successful.");
-        Broadcast *window = new Broadcast(serverIP, port);
-        window->show();
-        close();
+    if (isIPValid && isPortValid) {
+        QUdpSocket udpSocket;
+        udpSocket.connectToHost(address, port);
 
+        if (udpSocket.waitForConnected()) {
+            QMessageBox::information(this,
+                                     "Success",
+                                     "Connection to the server has been successful.");
+            Broadcast *window = new Broadcast(serverIP, port);
+            window->show();
+            close();
+        } else {
+            QMessageBox::critical(
+                this,
+                "Error",
+                "Failed to connect to the server. Please check the IP address and port.");
+        }
     } else {
-        QMessageBox::critical(
-            this, "Error", "Failed to connect to the server. Please check the IP address and port.");
+        QMessageBox::warning(this, "Invalid Input", "Please enter a valid IP address and port.");
     }
 }
 

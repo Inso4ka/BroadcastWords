@@ -81,7 +81,7 @@ void Broadcast::on_m_send_clicked()
     qint16 fixed_point_value = static_cast<qint16>(
         word3_part1 * 10); // Преобразуем в фиксированную точку (умножаем на 10)
     word3 |= (word3_part2 & 0xFF); // Записываем младшие 8 битов в биты 8-15
-    word3 |= (fixed_point_value << 8); // Записываем младшие 12 битов в биты 0-7
+    word3 |= (fixed_point_value << 8); // Записываем младшие 8 битов в биты 0-7
 
     quint8 numBits = 16; // Количество битов для записи
 
