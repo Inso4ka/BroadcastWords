@@ -22,12 +22,12 @@ void MainWindow::on_m_connect_qp_clicked()
     QString serverPort = ui->m_port_le->text();
     int port = serverPort.toInt();
 
-    QTcpSocket tcpSocket;
-    tcpSocket.connectToHost(serverIP, port);
+    QUdpSocket udpSocket;
+    udpSocket.connectToHost(serverIP, port);
 
-    if (tcpSocket.waitForConnected()) {
+    if (udpSocket.waitForConnected()) {
         QMessageBox::information(this, "Success", "Connection to the server has been successful.");
-        Broadcast *window = new Broadcast;
+        Broadcast *window = new Broadcast(serverIP, port);
         window->show();
         close();
 

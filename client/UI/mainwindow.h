@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
-#include <QTcpSocket>
+#include <QUdpSocket>
 
 namespace Ui {
 class MainWindow;
