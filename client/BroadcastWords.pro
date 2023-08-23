@@ -4,8 +4,6 @@ CONFIG += c++17
 QT += widgets
 QT += network
 
-
-
 SOURCES += UI/main.cpp \
     UI/mainwindow.cpp \
     UI/broadcast.cpp \

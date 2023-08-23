@@ -14,7 +14,7 @@ class Broadcast : public QDialog
     Q_OBJECT
 
 public:
-    explicit Broadcast(const QString &serverIP, int port, QWidget *parent = nullptr);
+    explicit Broadcast(const QHostAddress &serverIP, quint16 port, QWidget *parent = nullptr);
     ~Broadcast();
 
 private slots:
@@ -26,8 +26,8 @@ private slots:
 
 private:
     Ui::Broadcast *ui;
-    QString m_ip;
-    int m_port;
+    QHostAddress m_ip;
+    quint16 m_port;
 };
 
 #endif // BROADCAST_H

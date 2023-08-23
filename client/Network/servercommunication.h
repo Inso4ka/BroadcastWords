@@ -5,13 +5,16 @@ class MessageHandler : public QObject
 {
     Q_OBJECT
 private:
-    QString m_ip;
-    int m_port;
+    QHostAddress m_ip;
+    quint16 m_port;
     QUdpSocket *m_udpSocket;
 
+private slots:
+    void receiveMessage();
+
 public:
-    explicit MessageHandler(QObject *parent, const QString &ip, int port);
+    explicit MessageHandler(QObject *parent, const QHostAddress &ip, quint16 port);
     void sendPacket(const QByteArray &packet);
-    void processPendingDatagrams();
+    bool isConnectedToServer() const;
     virtual ~MessageHandler();
 };

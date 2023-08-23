@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "Network/servercommunication.h"
 #include "broadcast.h"
 #include "ui_mainwindow.h"
 
@@ -25,16 +26,16 @@ void MainWindow::on_m_connect_qp_clicked()
     QHostAddress address(serverIP);
     bool isIPValid = address.toIPv4Address() != 0; // Проверяем правильность IP-адреса
     bool isPortValid = port > 0 && port <= 65535; // Проверяем правильность порта
+    qDebug() << address << " " << port;
 
     if (isIPValid && isPortValid) {
-        QUdpSocket udpSocket;
-        udpSocket.connectToHost(address, port);
+        MessageHandler socket(this, address, port);
 
-        if (udpSocket.waitForConnected()) {
+        if (socket.isConnectedToServer()) {
             QMessageBox::information(this,
                                      "Success",
                                      "Connection to the server has been successful.");
-            Broadcast *window = new Broadcast(serverIP, port);
+            Broadcast *window = new Broadcast(address, port);
             window->show();
             close();
         } else {

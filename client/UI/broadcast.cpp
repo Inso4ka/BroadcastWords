@@ -2,9 +2,8 @@
 #include <QDebug>
 #include "Network/servercommunication.h"
 #include "ui_broadcast.h"
-#include <bitset>
 
-Broadcast::Broadcast(const QString &serverIP, int port, QWidget *parent)
+Broadcast::Broadcast(const QHostAddress &serverIP, quint16 port, QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Broadcast)
     , m_ip(serverIP)
@@ -101,7 +100,6 @@ void Broadcast::on_m_send_clicked()
 
     // Записываем слова данных в пакет
     stream << word1 << word2 << word3 << word4;
-    MessageHandler message(this, m_ip, m_port);
+    MessageHandler message(nullptr, m_ip, m_port);
     message.sendPacket(packet);
-    message.processPendingDatagrams();
 }
